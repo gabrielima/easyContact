@@ -1,0 +1,45 @@
+<div class="contacts">
+	<div class="contact" 
+		 ng-repeat="contact in contacts track by contact._id"
+		 ng-click="contact.expand = !contact.expand"
+		 ng-class="{ 'active' : contact.expand }">
+
+		<h1>{{ contact.name }}</h1>
+		
+		<div class="contact-info">
+			<div class="info-half">
+				<span class="i-telephone"></span>
+				<span> {{ contact.phone || '-'}} </span>
+			</div>
+
+			<div class="info-half">
+				<span class="i-email-envelope"></span>
+				<span> {{ contact.email || '-'}} </span>
+			</div>
+
+			<div class="info-full">
+				<span class="i-link"></span>
+				<span><a href="{{ contact.website || '-'}} "> {{ contact.website || '-'}} </a></span>		
+			</div>
+
+			<div class="info-full">
+				<span class="i-home"></span>
+				<span> {{ contact.address || '-'}} </span>		
+			</div>
+
+			<div class="info-full">
+				<a ng-href="{{ contact.facebook || '#'}}" ng-click="$event.stopPropagation()" class="social-btn facebook">
+					<span class="i-social-facebook"></span>
+					<span> Facebook </span>		
+				</a>
+
+				<a ng-href="{{ contact.twitter || '#'}}" ng-click="$event.stopPropagation()" class="social-btn twitter">
+					<span class="i-social-twitter"></span>
+					<span> Twitter </span>		
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<pre class="contact" > {{ contacts | json }}</pre>

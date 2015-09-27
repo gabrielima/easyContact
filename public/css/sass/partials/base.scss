@@ -1,0 +1,37 @@
+/*
+	Base CSS
+*/
+
+*, *:after, *:before {
+	margin: 0;
+	padding: 0;
+	@include border-box;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto !important;
+}
+
+html{ height: 100%; }
+
+body{
+	height: 100%;
+	font-family: $font-family;
+	color: $default-color;
+	background: {
+		color: $white;
+		image: $background-image;
+		repeat: no-repeat;
+		size: 100% 85%;
+		attachment: fixed;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+main { @include row; }

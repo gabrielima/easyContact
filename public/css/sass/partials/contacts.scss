@@ -1,0 +1,60 @@
+
+.contact{
+	position: relative;
+	max-width: 500px;
+	cursor: pointer;
+	background-color: #fff;
+	margin: 0 auto 45px;
+	padding: 20px 30px;
+	border-left: 0px solid $light-blue;
+	transition: all 0.2s linear;
+	@include box-shadow;
+
+	&:hover,
+	&.active{
+		border-width: 7px;
+	}
+
+	&.business:hover,
+	&.business.active{
+		border-color: $red;
+	}
+}
+
+.contact-info{
+	@include row(true);
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.35s cubic-bezier(0.62, -0.51, 0.74, 0.05);
+
+	.contact.active &{
+		margin-top: 15px;
+		max-height: 400px;
+	}
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 9px 14px;
+  margin-right: 20px;
+  @include box-shadow;
+  color: #fff;
+}
+
+.social-btn span[class|='i'] { 
+	vertical-align: middle; 
+	font-size: 14px;
+}
+
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1dcaff; }
+
+.info-full{
+	@include col;
+	margin: 0 0 10px;
+}
+
+.info-half{
+	@include col(1/2);
+	margin: 0 0 10px;	
+}
